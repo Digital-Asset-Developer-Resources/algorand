@@ -1,0 +1,128 @@
+ubuntu@ip-10-1-2-165:~$ sudo systemctl status algorand
+● algorand.service - Algorand daemon for mainnet in /var/lib/algorand
+   Loaded: loaded (/lib/systemd/system/algorand.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2019-12-01 18:27:57 UTC; 1min 13s ago
+ Main PID: 25475 (algod)
+    Tasks: 66 (limit: 4703)
+   CGroup: /system.slice/algorand.service
+           └─25475 /usr/bin/algod -d /var/lib/algorand
+
+Dec 01 18:27:57 ip-10-1-2-165 systemd[1]: Started Algorand daemon for mainnet in /var/lib/algorand.
+Dec 01 18:27:57 ip-10-1-2-165 algod[25475]: Logging to:  /var/lib/algorand/node.log
+Dec 01 18:27:57 ip-10-1-2-165 algod[25475]: Deadlock detection is set to: disabled (Default state is 'disable')
+Dec 01 18:27:57 ip-10-1-2-165 algod[25475]: Initializing the Algorand node... Success!
+Dec 01 18:27:57 ip-10-1-2-165 algod[25475]: Node running and accepting RPC requests over HTTP on port 127.0.0.1:8080. Press Ctrl-C to exit
+
+
+
+ubuntu@ip-10-1-2-165:~$ ls -lR $CHAIN_DATA 
+/data/algorand.com:
+total 4396788
+-rw-r--r-- 1 algorand algorand 1024210164 Dec  1 18:25 agreement.cdv
+-rw-r--r-- 1 algorand algorand 1073741870 Dec  1 15:56 agreement.cdv.archive
+-rw------- 1 algorand algorand          0 Nov 29 21:28 algod.lock
+-rw-r--r-- 1 algorand algorand         15 Nov 29 21:28 algod.net
+-rw-r--r-- 1 algorand algorand          6 Nov 29 21:28 algod.pid
+-rw-r--r-- 1 algorand algorand         64 Nov 29 21:28 algod.token
+-rw-r--r-- 1 algorand algorand       1632 Nov 29 21:26 config.json
+drwxrwxr-x 6 algorand algorand         65 Nov 29 21:24 genesis
+-rw-r--r-- 1 algorand algorand      24972 Nov 22 16:20 genesis.json
+drwx------ 2 algorand algorand        332 Nov 29 21:28 mainnet-v1.0
+-rw-r--r-- 1 algorand algorand 1073741405 Nov 30 16:57 node.archive.log
+-rw-r--r-- 1 algorand algorand 1044447396 Dec  1 18:25 node.log
+-rw-r--r-- 1 algorand algorand         23 Nov 22 16:20 system.json
+
+/data/algorand.com/genesis:
+total 0
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 betanet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 devnet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 mainnet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 testnet
+
+/data/algorand.com/genesis/betanet:
+total 12
+-rw-r--r-- 1 algorand algorand 8859 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/devnet:
+total 12
+-rw-r--r-- 1 algorand algorand 8859 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/mainnet:
+total 28
+-rw-r--r-- 1 algorand algorand 24972 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/testnet:
+total 36
+-rw-r--r-- 1 algorand algorand 34754 Nov 22 16:20 genesis.json
+ls: cannot open directory '/data/algorand.com/mainnet-v1.0': Permission denied
+ubuntu@ip-10-1-2-165:~$ sudo ls -lR $CHAIN_DATA 
+/data/algorand.com:
+total 4396788
+-rw-r--r-- 1 algorand algorand 1025914644 Dec  1 18:25 agreement.cdv
+-rw-r--r-- 1 algorand algorand 1073741870 Dec  1 15:56 agreement.cdv.archive
+-rw------- 1 algorand algorand          0 Nov 29 21:28 algod.lock
+-rw-r--r-- 1 algorand algorand         15 Nov 29 21:28 algod.net
+-rw-r--r-- 1 algorand algorand          6 Nov 29 21:28 algod.pid
+-rw-r--r-- 1 algorand algorand         64 Nov 29 21:28 algod.token
+-rw-r--r-- 1 algorand algorand       1632 Nov 29 21:26 config.json
+drwxrwxr-x 6 algorand algorand         65 Nov 29 21:24 genesis
+-rw-r--r-- 1 algorand algorand      24972 Nov 22 16:20 genesis.json
+drwx------ 2 algorand algorand        332 Nov 29 21:28 mainnet-v1.0
+-rw-r--r-- 1 algorand algorand 1073741405 Nov 30 16:57 node.archive.log
+-rw-r--r-- 1 algorand algorand 1044594116 Dec  1 18:25 node.log
+-rw-r--r-- 1 algorand algorand         23 Nov 22 16:20 system.json
+
+/data/algorand.com/genesis:
+total 0
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 betanet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 devnet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 mainnet
+drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 testnet
+
+/data/algorand.com/genesis/betanet:
+total 12
+-rw-r--r-- 1 algorand algorand 8859 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/devnet:
+total 12
+-rw-r--r-- 1 algorand algorand 8859 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/mainnet:
+total 28
+-rw-r--r-- 1 algorand algorand 24972 Nov 22 16:20 genesis.json
+
+/data/algorand.com/genesis/testnet:
+total 36
+-rw-r--r-- 1 algorand algorand 34754 Nov 22 16:20 genesis.json
+
+/data/algorand.com/mainnet-v1.0:
+total 50524716
+-rw-r--r-- 1 algorand algorand        4096 Nov 29 21:28 crash.sqlite
+-rw-r--r-- 1 algorand algorand       32768 Nov 29 21:28 crash.sqlite-shm
+-rw-r--r-- 1 algorand algorand        8272 Nov 29 21:28 crash.sqlite-wal
+-rw-r--r-- 1 algorand algorand   311984128 Dec  1 18:20 indexer.sqlite
+-rw-r--r-- 1 algorand algorand       32768 Dec  1 18:25 indexer.sqlite-shm
+-rw-r--r-- 1 algorand algorand     4832792 Dec  1 18:25 indexer.sqlite-wal
+-rw-r--r-- 1 algorand algorand 51408244736 Dec  1 18:24 ledger.block.sqlite
+-rw-r--r-- 1 algorand algorand       32768 Dec  1 18:25 ledger.block.sqlite-shm
+-rw-r--r-- 1 algorand algorand     4280712 Dec  1 18:25 ledger.block.sqlite-wal
+-rw-r--r-- 1 algorand algorand     3153920 Dec  1 18:21 ledger.tracker.sqlite
+-rw-r--r-- 1 algorand algorand       32768 Dec  1 18:25 ledger.tracker.sqlite-shm
+-rw-r--r-- 1 algorand algorand     4602072 Dec  1 18:25 ledger.tracker.sqlite-wal
+ubuntu@ip-10-1-2-165:~$ 
+
+
+ubuntu@ip-10-1-2-165:~$ df
+Filesystem     1K-blocks     Used Available Use% Mounted on
+udev             2006976        0   2006976   0% /dev
+tmpfs             403824      780    403044   1% /run
+/dev/xvda1       8065444  2693988   5355072  34% /
+tmpfs            2019100        0   2019100   0% /dev/shm
+tmpfs               5120        0      5120   0% /run/lock
+tmpfs            2019100        0   2019100   0% /sys/fs/cgroup
+/dev/loop0         91264    91264         0 100% /snap/core/7713
+/dev/loop1         18432    18432         0 100% /snap/amazon-ssm-agent/1480
+/dev/xvdf       67076096 55018904  12057192  83% /data
+/dev/loop2         91264    91264         0 100% /snap/core/8039
+tmpfs             403820        0    403820   0% /run/user/1000
+ubuntu@ip-10-1-2-165:~$ 
