@@ -10,8 +10,8 @@
 ### Install from AWS AMI
 
 * Step thru [VPC notebook](https://github.com/Digital-Asset-Developer-Resources/aws/blob/master/VPC.ipynb)
-  * Notice the VPC id, subnet id and security group id for AMI launch.
-  * Search for latest ![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 1.png)  
+  * Notice the VPC id, subnet id and security group id for AMI launch.  
+  ![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 1.png)  
   * Select ![Instance Tier](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 2.png)  
   * Select ![VPC/Subnet IDs](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3a.png)  
   * Select ![mount chain data](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3b.png)  
