@@ -11,8 +11,11 @@
 
 * Step thru [VPC notebook](https://github.com/Digital-Asset-Developer-Resources/aws/blob/master/VPC.ipynb)
   * Notice the VPC id, subnet id and security group id for AMI launch.  
-![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS%20AMI%20 1.png)  
-  * Select ![Instance Tier](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 2.png)  
+  
+* Search and select the public AMI:  
+![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS%20AMI%201.png)  
+  
+![Instance Tier](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 2.png)  
   * Select ![VPC/Subnet IDs](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3a.png)  
   * Select ![mount chain data](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3b.png)  
   * Select ![Set Name Tag](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 4.png)  
