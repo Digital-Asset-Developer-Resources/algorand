@@ -7,17 +7,38 @@
 * [mainnet](AWS AMI)
 
 
-### Install from AWS AMI
+## Install from AWS AMI
 
-* Step thru [VPC notebook](https://github.com/Digital-Asset-Developer-Resources/aws/blob/master/VPC.ipynb)
-  * Notice the VPC id, subnet id and security group id for AMI launch.
-  * Search for latest ![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 1.png)  
-  * Select ![Instance Tier](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 2.png)  
-  * Select ![VPC/Subnet IDs](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3a.png)  
-  * Select ![mount chain data](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 3b.png)  
-  * Select ![Set Name Tag](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 4.png)  
-  * Select ![Select Security Group](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 5.png)  
-  * Select ![Launch Instance](https://github.com/Digital-Asset-Developer-Resources/algorand/tree/master/images/AWS AMI 6.png)  
+### Step thru [VPC notebook](https://github.com/Digital-Asset-Developer-Resources/aws/blob/master/VPC.ipynb)
+
+  * Notice the VPC id, subnet id and security group id for AMI launch.  
+  
+### Search and select the public AMI:  
+
+![AMI](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%201.png)  
+  
+### Select the Instance Type:  
+
+![Instance Tier](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%202.png)  
+
+### Select the VPC and subnet IDs:  
+
+![VPC/Subnet IDs](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%203a.png)  
+
+### Update the USER DATA to automount the chain data:  
+
+![mount chain data](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%203b.png)  
+
+### Set a Name Tag to label instance on EC2 console  
+  
+![Set Name Tag](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%204.png)  
+  
+### Select the security group ID:  
+
+![Select Security Group](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%205.png)  
+### Review and launch new instance:  
+
+![Launch Instance](https://github.com/Digital-Asset-Developer-Resources/algorand/blob/master/images/AWS%20AMI%206.png)  
 
 
 
