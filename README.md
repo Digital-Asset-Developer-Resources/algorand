@@ -9,7 +9,7 @@ What is Algorand?
 Algorand is a permissionless, pure proof-of-stake blockchain protocol
 that, without forking, provides the necessary security, scalability,
 and decentralization for billions of users. [Official
-documentation](https://developer.algorand.org/docs/getting-started).
+documentation](https://developer.algorand.org/docs/getting-started) and [Github](https://github.com/algorand/go-algorand).
 
 
 A [video](https://www.youtube.com/watch?v=Lbje18-zxc8&t=8s) overview of Algorand by founder Silvio Micali.

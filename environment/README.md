@@ -1,4 +1,62 @@
-The mainnet fullnode has a file structure as below:
+### Code base
+
+[goal] is the command line tool and is install in `/usr/bin/goal`.
+The algod daemon is controlled by the *algorand service( that starts
+automatically on image launch, defaults to a DATADIR of
+/var/lib/algorand.  Uses
+[systemctl](http://manpages.ubuntu.com/manpages/bionic/man1/systemctl.1.html)
+to start, stop or check status of algorand service.
+
+```bash
+algorand  1448  9.3  2.0 1350988 83084 ?       Ssl  14:53   2:39 /usr/bin/algod -d /var/lib/algorand
+```
+
+[Source code github repo](https://github.com/algorand/go-algorand)
+
+```bash
+$ls -l go-algorand
+
+-rw-rw-r--  1 ubuntu ubuntu  4420 Dec 11 15:33 CONTRIBUTING.md
+-rw-rw-r--  1 ubuntu ubuntu 36469 Dec 11 15:33 COPYING
+-rw-rw-r--  1 ubuntu ubuntu  3099 Dec 11 15:33 COPYING_FAQ
+-rw-rw-r--  1 ubuntu ubuntu  8415 Dec 11 15:33 Makefile
+-rw-rw-r--  1 ubuntu ubuntu  7821 Dec 11 15:33 README.md
+-rw-rw-r--  1 ubuntu ubuntu   235 Dec 11 15:33 THANKS.md
+drwxrwxr-x  5 ubuntu ubuntu  4096 Dec 11 15:33 agreement
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 auction
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 catchup
+drwxrwxr-x 29 ubuntu ubuntu  4096 Dec 11 15:33 cmd
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 components
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 config
+drwxrwxr-x  6 ubuntu ubuntu  4096 Dec 11 15:33 crypto
+drwxrwxr-x  4 ubuntu ubuntu  4096 Dec 11 15:33 daemon
+drwxrwxr-x 10 ubuntu ubuntu  4096 Dec 11 15:33 data
+drwxrwxr-x  5 ubuntu ubuntu  4096 Dec 11 15:33 debug
+drwxrwxr-x  5 ubuntu ubuntu  4096 Dec 11 15:33 docker
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 docs
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 gen
+-rw-rw-r--  1 ubuntu ubuntu  2416 Dec 11 15:33 go.mod
+-rw-rw-r--  1 ubuntu ubuntu 13534 Dec 11 15:33 go.sum
+drwxrwxr-x  6 ubuntu ubuntu  4096 Dec 11 15:33 installer
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 ledger
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 libgoal
+drwxrwxr-x  4 ubuntu ubuntu  4096 Dec 11 15:33 logging
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 netdeploy
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 network
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 node
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 nodecontrol
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 protocol
+drwxrwxr-x  2 ubuntu ubuntu  4096 Dec 11 15:33 rpcs
+drwxrwxr-x  7 ubuntu ubuntu  4096 Dec 11 15:33 scripts
+drwxrwxr-x  4 ubuntu ubuntu  4096 Dec 11 15:33 shared
+drwxrwxr-x  8 ubuntu ubuntu  4096 Dec 11 15:33 test
+drwxrwxr-x  4 ubuntu ubuntu  4096 Dec 11 15:33 tools
+drwxrwxr-x 12 ubuntu ubuntu  4096 Dec 11 15:33 util
+drwxrwxr-x  3 ubuntu ubuntu  4096 Dec 11 15:33 wallet
+```
+
+
+### File structure
 
 ```bash
 $ls -l /var/lib/algorand
@@ -18,11 +76,11 @@ drwx------ 2 algorand algorand        332 Dec 11 14:53 mainnet-v1.0
 -rw-r--r-- 1 algorand algorand         23 Nov 22 16:20 system.json
 ```
 
-### File contents:
+### File contents
 
 1. [genesis.json](genesis.json)
 2. [swagger.json](../capabilities/swagger.json) use OAS2 [swagger editor](https://editor.swagger.io) to explore.
-3. agreement.cdv - ???
+3. [agreement.cdv](https://github.com/algorand/go-algorand/blob/master/agreement/README.md) - consensus protocol implementation 
 4. agreement.cdv.archive - previous version of agrrement.cdv
 5. algod.
    * lock - internal use
@@ -35,7 +93,7 @@ drwx------ 2 algorand algorand        332 Dec 11 14:53 mainnet-v1.0
 9. system.json - ```json {"shared_server":true}```
  
 
-### genesis directory
+### Genesis directory
 
 ```bash
 drwxrwxr-x 2 algorand algorand 26 Nov 29 21:24 betanet
@@ -51,10 +109,11 @@ genesis/mainnet:
 -rw-r--r-- 1 algorand algorand 24972 Nov 22 16:20 genesis.json
 genesis/testnet:
 -rw-r--r-- 1 algorand algorand 34754 Nov 22 16:20 genesis.json
-
+```
 
 ### Database - [sqlite](https://www.sqlite.org)
 
+```bash
 $ sudo ls -l $CHAIN_DATA/mainnet-v1.0/
 
 -rw-r--r-- 1 algorand algorand        4096 Nov 29 21:28 crash.sqlite
@@ -69,6 +128,24 @@ $ sudo ls -l $CHAIN_DATA/mainnet-v1.0/
 -rw-r--r-- 1 algorand algorand     3207168 Dec 11 14:54 ledger.tracker.sqlite
 -rw-r--r-- 1 algorand algorand       32768 Dec 11 14:57 ledger.tracker.sqlite-shm
 -rw-r--r-- 1 algorand algorand     4602072 Dec 11 14:57 ledger.tracker.sqlite-wal
+```
+
+### Footprint
+
+The `algod` daemon has a minimal footprint when executing, typically consuming 7% CPU and 2% memory (of 4Gb) when sync'd.
 
 
+```bash
+top - 15:25:43 up 33 min,  1 user,  load average: 0.03, 0.03, 0.07
+Tasks: 108 total,   1 running,  58 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.7 us,  0.0 sy,  0.0 ni, 97.1 id,  0.0 wa,  0.0 hi,  0.0 si,  0.2 st
+KiB Mem :  4038260 total,  3052696 free,   186896 used,   798668 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  3632164 avail Mem 
 
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND    
+ 1448 algorand  20   0 1350988  83196  19820 S   7.3  2.1   2:52.10 algod      
+    1 root      20   0  159648   8992   6788 S   0.0  0.2   0:02.76 systemd    
+
+...
+```
+  
