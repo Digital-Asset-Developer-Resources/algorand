@@ -15,10 +15,6 @@ documentation](https://developer.algorand.org/docs/getting-started).
 A [video](https://www.youtube.com/watch?v=Lbje18-zxc8&t=8s) overview of Algorand by founder Silvio Micali.
 
 
-Environment
------------
-
-
 Network Configurations
 ----------------------
 
@@ -29,7 +25,7 @@ There are four types of networks available with various [configuration options](
 3. [Testnet](configuration/testnet.json) with [faucet](https://bank.testnet.algorand.network/)
 4. [Betanet](https://developer.algorand.org/docs/getting-started-betanet) periodically restarted with new genesis block.
 
-Search in AWS region ***us-east-2*** for public AMIs with name ***Algorand***.
+Search in AWS region ***us-east-2*** for public AMIs with name ***Algorand***.  Copy/paste the ami-id into the image loader; e.g. [python AMI](https://github.com/Digital-Asset-Developer-Resources/aws/blob/master/python/AMI.ipynb).  Alternatively, follow these [instructions](nodes/README.md) for the AWS UI.
 
 Mainnet nodes take about 40 hours to sync using a 2CPU/4GB (t2.medium) EC2 instance on AWS.  Catch up after 1 week takes about 2 hours.
   
@@ -37,9 +33,7 @@ Mainnet nodes take about 40 hours to sync using a 2CPU/4GB (t2.medium) EC2 insta
 Capabilities
 ------------
 
-### Wallets
-
-### Transfers
+Capabilities include wallet support, including multi-sig wallets, transfers with finality on the order of 5 seconds as well as platform tokens, atomic swaps, smart contracts, APIs and SDKs.
 
 ### Tokens
 
@@ -52,7 +46,7 @@ network software with
 
 In-house, stack-based language [TEAL](https://developer.algorand.org/docs/teal) for smart contracts.  Specific examples:
 
-1. [Escrow]()
+1. [Escrow](capabilities/esrow.md)
 2. [Periodic payments]()
 3. [DEX]()
 
@@ -60,6 +54,18 @@ In-house, stack-based language [TEAL](https://developer.algorand.org/docs/teal) 
 
 Two APIs are available, [REST]() and [Key management KMD]() as well as
 a command line utility.
+
+Both require a token ($CHAIN_DATA/algod.token)
+
+```bash
+2fxxxexxxeb123fedf51c1647f434q5dvsv34ef4432gf
+```
+
+and network ip:port ($CHAIN_DATA/algod.net).
+
+```bash
+127.0.0.1:8080
+```
 
 ### SDK
 
