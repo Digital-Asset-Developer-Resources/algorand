@@ -1,9 +1,9 @@
 ### Code base
 
-[goal] is the command line tool and is install in `/usr/bin/goal`.
-The algod daemon is controlled by the *algorand service( that starts
+[goal](https://developer.algorand.org/docs/using-goal) is the command line tool installed in `/usr/bin/goal`.
+The algod daemon is controlled by the *algorand service* that starts
 automatically on image launch, defaults to a DATADIR of
-/var/lib/algorand.  Uses
+/var/lib/algorand.  Use
 [systemctl](http://manpages.ubuntu.com/manpages/bionic/man1/systemctl.1.html)
 to start, stop or check status of algorand service.
 
@@ -11,7 +11,7 @@ to start, stop or check status of algorand service.
 algorand  1448  9.3  2.0 1350988 83084 ?       Ssl  14:53   2:39 /usr/bin/algod -d /var/lib/algorand
 ```
 
-[Source code github repo](https://github.com/algorand/go-algorand)
+[Source code](https://github.com/algorand/go-algorand)
 
 ```bash
 $ls -l go-algorand
